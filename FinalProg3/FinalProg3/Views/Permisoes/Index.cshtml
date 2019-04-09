@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FinalProg3.Model.Permiso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Permisos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Desde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentarios)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hasta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentarios)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

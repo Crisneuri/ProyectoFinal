@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FinalProg3.Model.Nomina>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nominas</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+         Año: @Html.TextBox("SearchString") 
+        <input type="submit" value="Buscar" class="btn btn-danger" />
+    </p>
+}
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monto_Total)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monto_Total)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            background: red;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Mi aplicación</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+ 
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="form-group">
+                <input type="submit" value="Menu" class="btn btn-danger" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+                @Html.ActionLink("Gestion de Recursos Humanos", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse badge-dark">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Empleados/Index"> Empleados </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Departamentos/Index">Departamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cargos/Index">Cargos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Licencias/Index">Licencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Nominas/Index">Nominas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Permisoes/Index">Permisos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/Salidas_Empleados/Index">Salidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Vacaciones/Index">Vacaciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Programacion 3</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

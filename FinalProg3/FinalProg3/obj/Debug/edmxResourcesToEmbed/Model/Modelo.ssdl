@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FinalmenteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Departamento" Type="varchar" MaxLength="10" />
+    <Property Name="Nombre" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" />
+    <Property Name="Apellido" Type="varchar" MaxLength="20" />
+    <Property Name="Telefono" Type="varchar" MaxLength="11" />
+    <Property Name="Departamento" Type="varchar" MaxLength="15" />
+    <Property Name="Cargo" Type="varchar" MaxLength="15" />
+    <Property Name="Fecha_Ingreso" Type="datetime" />
+    <Property Name="Salario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Estatus" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Licencia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Desde" Type="datetime" />
+    <Property Name="Hasta" Type="datetime" />
+    <Property Name="Motivo" Type="varchar" MaxLength="80" />
+    <Property Name="Comentarios" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nomina">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ano" Type="varchar" MaxLength="10" />
+    <Property Name="Mes" Type="varchar" MaxLength="10" />
+    <Property Name="Monto_Total" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Permiso">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Desde" Type="datetime" />
+    <Property Name="Hasta" Type="datetime" />
+    <Property Name="Comentarios" Type="varchar" MaxLength="120" />
+  </EntityType>
+  <EntityType Name="Salidas_Empleados">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Salida" Type="varchar" MaxLength="10" />
+    <Property Name="Motivo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fecha_Salida" Type="datetime" />
+    <Property Name="Empleado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vacaciones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Desde" Type="datetime" />
+    <Property Name="Hasta" Type="datetime" />
+    <Property Name="Correspondiente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comentario" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="FinalmenteModelStoreContainer">
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Licencia" EntityType="Self.Licencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nomina" EntityType="Self.Nomina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permiso" EntityType="Self.Permiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salidas_Empleados" EntityType="Self.Salidas_Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

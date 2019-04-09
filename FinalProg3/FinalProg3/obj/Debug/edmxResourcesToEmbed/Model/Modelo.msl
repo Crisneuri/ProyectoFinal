@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FinalmenteModelStoreContainer" CdmEntityContainer="FinalmenteEntities">
+    <EntitySetMapping Name="Cargos">
+      <EntityTypeMapping TypeName="FinalmenteModel.Cargos">
+        <MappingFragment StoreEntitySet="Cargos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="FinalmenteModel.Departamentos">
+        <MappingFragment StoreEntitySet="Departamentos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Codigo_Departamento" ColumnName="Codigo_Departamento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="FinalmenteModel.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Fecha_Ingreso" ColumnName="Fecha_Ingreso" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licencia">
+      <EntityTypeMapping TypeName="FinalmenteModel.Licencia">
+        <MappingFragment StoreEntitySet="Licencia">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomina">
+      <EntityTypeMapping TypeName="FinalmenteModel.Nomina">
+        <MappingFragment StoreEntitySet="Nomina">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Monto_Total" ColumnName="Monto_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permiso">
+      <EntityTypeMapping TypeName="FinalmenteModel.Permiso">
+        <MappingFragment StoreEntitySet="Permiso">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salidas_Empleados">
+      <EntityTypeMapping TypeName="FinalmenteModel.Salidas_Empleados">
+        <MappingFragment StoreEntitySet="Salidas_Empleados">
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Fecha_Salida" ColumnName="Fecha_Salida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacaciones">
+      <EntityTypeMapping TypeName="FinalmenteModel.Vacaciones">
+        <MappingFragment StoreEntitySet="Vacaciones">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="Correspondiente" ColumnName="Correspondiente" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

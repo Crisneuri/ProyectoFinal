@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FinalmenteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cargo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo_Departamento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Departamento" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Cargo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_Ingreso" Type="DateTime" Precision="3" />
+    <Property Name="Salario" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Licencia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Desde" Type="DateTime" Precision="3" />
+    <Property Name="Hasta" Type="DateTime" Precision="3" />
+    <Property Name="Motivo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Comentarios" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nomina">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ano" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Mes" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Monto_Total" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Permiso">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Desde" Type="DateTime" Precision="3" />
+    <Property Name="Hasta" Type="DateTime" Precision="3" />
+    <Property Name="Comentarios" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Salidas_Empleados">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Salida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_Salida" Type="DateTime" Precision="3" />
+    <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vacaciones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Desde" Type="DateTime" Precision="3" />
+    <Property Name="Hasta" Type="DateTime" Precision="3" />
+    <Property Name="Correspondiente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comentario" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="FinalmenteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+    <EntitySet Name="Licencia" EntityType="Self.Licencia" />
+    <EntitySet Name="Nomina" EntityType="Self.Nomina" />
+    <EntitySet Name="Permiso" EntityType="Self.Permiso" />
+    <EntitySet Name="Salidas_Empleados" EntityType="Self.Salidas_Empleados" />
+    <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" />
+  </EntityContainer>
+</Schema>
